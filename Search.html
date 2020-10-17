@@ -24,30 +24,36 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light mr-auto"
-        style="background-color:#cf3b3b; padding-top: 0rem; padding-bottom: 0rem;">
-        <a class="Logo nabvar-brand text-light text-decoration-none" href="#" style="font-size: 22px;">
-            <img src="Img/Logo-1-White.png" width="60" height="60" class="d-inline-block" alt="Logo" loading="lazy">
-            <b style="color: white;">Music In Movies</b>
-        </a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#NavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="NavMenu">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style="color: white;"><b>Usuarios</b> </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style="color: white;"><b>Registrarse</b> </a>
-                </li>
-            </ul>
-        </div>
-        <form class="form-inline">
-            <input class="form-control mr-xl-2" type="text" placeholder="Buscar Película/Artista" aria-label="Search">
-            <button class="btn btn-success my-2 my-xl-0" type="submit">Buscar</button>
-        </form>
-    </nav>
+    <nav class="navbar navbar-expand-md mx-sm-auto navbar-light mr-auto"
+    style="background-color:#cf3b3b; padding-top: 0rem; padding-bottom: 0rem;">
+    <a class="Logo nabvar-brand text-light text-decoration-none" href="#" style="font-size: 22px;">
+        <img src="Img/Logo-1-White.png" width="60" height="60" class="d-inline-block" alt="Logo" loading="lazy">
+        <b style="color: white;">Music In Movies</b>
+    </a>
+
+    <ul class="navbar-nav ml-md-auto">
+        <li class="nav-item dropdown" style="padding-bottom: .3rem;">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false" style="color: white;"><b>Usuarios/Registrarse</b>
+            </a>
+            <div class="dropdown-menu">
+                <div class="container">
+                    <label for="I-mail">Usuario/e-mail</label>
+                    <input type="email" class="form-control" id="I-email">
+                    <label for="I-Contra">Contraseña</label>
+                    <input type="password" class="form-control" id="I-Contra">
+                    <button class="btn btn-success my-2 my-xl-6" type="submit">Ingresar</button>
+                    <button class="btn btn-info my-2 my-xl-6" type="submit">Registrarse</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <form class="form-inline">
+        <input class="form-control mr-xl-2" type="text" placeholder="Buscar Película/Artista" aria-label="Search">
+        <button class="btn btn-success my-2 my-xl-0" type="submit">Buscar</button>
+    </form>
+</nav>
 
     <div class="container" style="padding-top: .5rem;">
         <h3>Los resultados de la Busqueda "Disney" son...</h3>
