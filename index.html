@@ -79,36 +79,56 @@
     <img class="img-fluid" src="Img/Orchesta-2.jpg" alt="Orchesta">
 
     <div style="padding-top: 2rem;">
-        <div class="jumbotron" style="background-color: rgb(255, 215, 191);">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h1 class="display-5">Banda sonora en Harry Potter</h1>
-                        <P class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur
-                            soluta aliquid
-                            error molestias sequi inventore tempore, dignissimos repudiandae aperiam necessitatibus,
-                            praesentium
-                            eveniet minus rem laboriosam tempora nihil sunt ipsa! </P>
-                        <hr class="my-2">
-                        <p>Se van a presentar en vivo</p>
+        <div class="jumbotron jumbotron-fluid" style="background-color: rgb(255, 215, 191);">
+            <div class="carousel slide  carousel-fade" data-ride="carousel" id="News-Carousel">
+                <ol class="carousel-indicators" style="margin-top: 0rem;">
+                    <li data-target="#News-Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#News-Carousel" data-slide-to="1"></li>
+                    <li data-target="#News-Carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active Carousel-text">
+                        <img src="Img/HP-O.jpg" class="d-block w-100 Carousel-Img" alt="Black">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Banda sonora en Harry Potter</h1>
+                            <p>Se van a presentar en vivo</p>
+                            <a class="btn btn-info btn-lg" style="opacity: 75%;" href="#" role="button">Ver más</a>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-
-
-                        <img src="Img/HP2-O.jpg" style="width: 250px; height: 250px; margin-bottom: 1rem;" alt="HP-O">
-
+                    <div class="carousel-item Carousel-text">
+                        <img src="Img/Hobbit-Logo.jpg" class="d-block w-100 Carousel-Img" alt="Black">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Remaster del Hobbit</h1>
+                            <p>Revive la Musica de el Hobbit</p>
+                            <a class="btn btn-info btn-lg" style="opacity: 75%;" href="#" role="button">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item Carousel-text">
+                        <img src="Img/Soul2-Logo.jpg" class="d-block w-100 Carousel-Img" alt="Black">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>La nueva película de Disney</h1>
+                            <p>Descubre mas sobre la musica dentro de la película Soul</p>
+                            <a class="btn btn-info btn-lg" style="opacity: 75%;" href="#" role="button">Ver más</a>
+                        </div>
                     </div>
                 </div>
-                <a class="btn btn-info btn-lg" href="#" role="button">Ver más</a>
+                <a class="carousel-control-prev" href="#News-Carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#News-Carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="padding-top: 1rem;">
         <div class="row">
             <div class="col-md-3">
                 <div class="card mb-4 shadow-sm">
-                    <img src="Img//SW-S.jpg" class="card-img-top" alt="TLK-S">
+                    <img src="Img/SW-S.jpg" class="card-img-top" alt="SW-S">
                     <div class="card-body">
                         <h5 class="card-tittle">Star Wars Soundtrack</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ipsum
@@ -159,7 +179,6 @@
             <div class="col-md-8">
                 <p>© 2020 MusicinMovies.Inc</p>
             </div>
-
             <div class="col-sm-3">
                 <img class="img-fluid" src="Img/FB-I-Med.png" width="35px" height="35px" alt="FB-I">
                 <img class="img-fluid" src="Img/Twitter-I-Med.png" width="35px" height="35px" alt="TW-I-I">
@@ -172,4 +191,5 @@
     </div>
 
 </body>
+
 </html>
