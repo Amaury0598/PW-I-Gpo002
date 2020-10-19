@@ -36,3 +36,6 @@ body{
     width: 64px;
     height: 64px;
 }
+.card-img-fil{
+filter: brightness(0.7);
+}
