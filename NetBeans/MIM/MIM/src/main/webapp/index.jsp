@@ -77,12 +77,13 @@
                         <input type="password" name="NPassword" class="form-control" id="I-Contra">
                         <button class="btn btn-success my-2 my-xl-6" type="submit">Ingresar</button>                            
                     </div>
-                    </form>
-                    <form action="Registro.jsp">
-                    <div class="container">                 
+                    </form>                    
+                    <div class="container">
+                        <a href="Registro.jsp">     
                     <button class="btn btn-info my-2 my-xl-6" type="submit">Registrarse</button>
-                    </div>
-                    </form>
+                        </a>    
+                    </div>  
+                    
                 </div>             
             </li>
         </ul>
