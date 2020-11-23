@@ -54,7 +54,7 @@ public class UserDao {
     public static int Registro(Usuarios usuario){
         try{
             Connection con = DBConnect.getConnection();
-            CallableStatement statement = con.prepareCall("call Registro(?,?,?)");
+            CallableStatement statement = con.prepareCall("call New_User(?,?,?);");
             statement.setString(1, usuario.getNEmail());
             statement.setString(2, usuario.getNUser());
             statement.setString(3, usuario.getNPassword());
@@ -67,14 +67,14 @@ public class UserDao {
         public static Usuarios LogIn(Usuarios usuario){
         try{
             Connection con = DBConnect.getConnection();
-            CallableStatement statement = con.prepareCall("CALL Ingresar(?,?);");
+            CallableStatement statement = con.prepareCall("call LogIn_User(?,?);");
             statement.setString(1, usuario.getNEmail());
             statement.setString(2, usuario.getNPassword());
             ResultSet result = statement.executeQuery();
             while(result.next()){
                 int id = result.getInt(1);
-                String email = result.getString(2); 
-                String username = result.getString(3); 
+                String email = result.getString("Email_Users_MIM"); 
+                String username = result.getString("Name_Users_MIM"); 
                 return new Usuarios(id, email, username, null);
             }
         }catch(SQLException ex){

@@ -13,5 +13,10 @@
     </head>
     <body>
         <h1>Ingresasteee !!</h1>
+        <h2> ID: <%= session.getAttribute("id") %></h2>
+        <h2>Nombre de Usuario: <%= session.getAttribute("NUser") %></h2>
+        <form action="LogOffCont" method="POST">
+             <button class="btn btn-info my-2 my-xl-6" type="submit">Salir</button>
+        </form>
     </body>
 </html>

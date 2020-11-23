@@ -64,9 +64,10 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
            </form>
          </div>
-    </div>        
-             
-    <div class="container-fluid" style="padding-top: 17.7rem;">
+    </div>  
+
+        
+    <div class="container-fluid" style="padding-top: 22.7rem;">
         <hr class="my-2">
         <div class="row">
             <div class="col-md-10">
@@ -76,7 +77,6 @@
                 <img class="img-fluid" src="Img/FB-I-Med.png" width="35px" height="35px" alt="FB-I">
                 <img class="img-fluid" src="Img/Twitter-I-Med.png" width="35px" height="35px" alt="TW-I-I">
                 <img class="img-fluid" src="Img/YT-I-Med.png" width="35px" height="35px" alt="YT-I">
-                <p style="text-align: center;">Help</p>
             </div>
         </div>
     </div>

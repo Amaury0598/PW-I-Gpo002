@@ -4,6 +4,8 @@
     Author     : amg05
 --%>
 
+<%@page import="com.mycompany.mim.Control.Model.Category"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,73 +29,9 @@
 
     <title>Music in Movies</title>
 </head>
-
 <body>
-
-    <!--<div class="container-fluid bg-primary py-5">
-            <div class="container text-white">
-                <h1 class="display-4"><b>Layout</b></h1>
-                <p class="lead">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci consequatur ullam velit odit voluptates repellendus commodi atque. Unde odit impedit in quos laborum officia animi explicabo, necessitatibus hic tempore.
-                </p>
-            </div>
-      </div>-->
-
-    <!--<div class="container">
-        <div class="row">
-            <div class="col-4 bg-primary">
-                <p>Col-4</p>
-            </div>
-            <div class="col-2 bg-succes">
-                <p>Col-4</p>
-            </div>
-            <div class="col-4 bg-primary">
-                <p>Col-4</p>
-            </div>
-            <div class="col-2 bg-succes">
-                <p>Col-4</p>
-            </div>
-        </div>
-    </div>-->
-
-    <nav class="navbar navbar-expand-md mx-sm-auto navbar-light mr-auto"
-        style="background-color:#cf3b3b; padding-top: 0rem; padding-bottom: 0rem;">
-        <a class="Logo nabvar-brand text-light text-decoration-none" href="#" style="font-size: 22px;">
-            <img src="Img/Logo-1-White.png" width="60" height="60" class="d-inline-block" alt="Logo" loading="lazy">
-            <b style="color: white;">Music In Movies</b>
-        </a>
-
-        <ul class="navbar-nav ml-md-auto">
-            <li class="nav-item dropdown" style="padding-bottom: .3rem;">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false" style="color: white;"><b>Usuarios/Registrarse</b>
-                </a>          
-                <div class="dropdown-menu">
-                    <form action="LogInCont" method="POST">
-                    <div class="container">
-                        <label for="I-mail">Usuario/e-mail</label>
-                        <input type="email" name="NEmail" class="form-control" id="I-email">
-                        <label for="I-Contra">Contraseña</label>
-                        <input type="password" name="NPassword" class="form-control" id="I-Contra">
-                        <button class="btn btn-success my-2 my-xl-6" type="submit">Ingresar</button>                            
-                    </div>
-                    </form>                    
-                    <div class="container">
-                        <a href="Registro.jsp">     
-                    <button class="btn btn-info my-2 my-xl-6" type="submit">Registrarse</button>
-                        </a>    
-                    </div>  
-                    
-                </div>             
-            </li>
-        </ul>
-
-        <form class="form-inline">
-            <input class="form-control mr-xl-2" type="text" placeholder="Buscar Película/Artista" aria-label="Search">
-            <button class="btn btn-success my-2 my-xl-0" type="submit">Buscar</button>
-        </form>
-    </nav>
-
+    <jsp:include page="NavBar.jsp"/>
+    
     <img class="img-fluid" src="Img/Orchesta-2.jpg" alt="Orchesta">
 
     <div style="padding-top: 1rem;">
