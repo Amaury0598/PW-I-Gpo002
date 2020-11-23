@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23 nov 2020, 17:40:48
+    Author     : amg05
+*/
+
+body{
+    background-color: rgb(255, 236, 225);
+}
+
+.Carousel-Img{
+
+   object-fit: cover;
+   max-height: 720px;  
+   max-width: 100%;
+}
+
+.Card-Img{
+    object-fit: cover;
+    max-height: 250px;  
+    max-width: 100%;
+}
+
+.Search-Img{
+    object-fit: cover;
+    max-height: 180px;  
+    max-width: 100%;
+}
+.Jumps-B{
+    padding: 1.5rem;
+    margin-bottom: .1rem;
+    background-color: rgb(255, 215, 191);;
+}
+.Lists{
+    font-size: 24px;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+}
+
+.Avatars-I{
+    border-radius: 15px;
+    width: 64px;
+    height: 64px;
+}
+.card-img-fil{
+filter: brightness(0.7);
+}
