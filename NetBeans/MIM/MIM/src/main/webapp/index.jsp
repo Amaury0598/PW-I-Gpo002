@@ -7,7 +7,7 @@
 <%@page import="com.mycompany.mim.Control.Model.Category"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
     <meta charset="utf-8">
@@ -25,7 +25,7 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="Assets/css/main.css">
 
     <title>Music in Movies</title>
 </head>

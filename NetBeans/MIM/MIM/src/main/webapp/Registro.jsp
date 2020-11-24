@@ -24,25 +24,17 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="Assets/css/main.css">
 
     <title>Music in Movies</title>
     </head>
     <body>
-    <nav class="navbar navbar-expand-md navbar-light mr-auto"
-    style="background-color:#cf3b3b; padding-top: 0rem; padding-bottom: 0rem;">
-        <a class="Logo nabvar-brand text-light text-decoration-none" href="index.jsp" style="font-size: 22px;">
-        <img src="Img/Logo-1-White.png" width="60" height="60" class="d-inline-block" alt="Logo" loading="lazy">
-        <b style="color: white;">Music In Movies</b>
-        </a>
-    <form class="form-inline ml-sm-auto">
-        <input class="form-control mr-xl-2" type="text" placeholder="Buscar Película/Artista" aria-label="Search">
-        <button class="btn btn-success my-2 my-xl-0" type="submit">Buscar</button>
-    </form>
-    </nav>
+        
+        <jsp:include page="NavBar_2.jsp"/>
+
     <div class="container" style="margin-top: 20px">
          <div class="row">
-             <h2>Registrate Aqui</h2>
+             <h2>Registrate Gratis Aqui</h2>
              <form class="col-12" action="RegistroCont" method="POST" style="margin-top: 20px">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Direccion E-mail</label>

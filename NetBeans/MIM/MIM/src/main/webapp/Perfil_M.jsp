@@ -1,6 +1,12 @@
-<!doctype html>
-<html lang="es">
+<%-- 
+    Document   : Perfil_M
+    Created on : 23 nov 2020, 18:13:54
+    Author     : amg05
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,48 +23,19 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="Assets/css/main.css">
 
     <title>Music in Movies</title>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-md mx-sm-auto navbar-light mr-auto"
-    style="background-color:#cf3b3b; padding-top: 0rem; padding-bottom: 0rem;">
-    <a class="Logo nabvar-brand text-light text-decoration-none" href="#" style="font-size: 22px;">
-        <img src="Img/Logo-1-White.png" width="60" height="60" class="d-inline-block" alt="Logo" loading="lazy">
-        <b style="color: white;">Music In Movies</b>
-    </a>
-
-    <ul class="navbar-nav ml-md-auto">
-        <li class="nav-item dropdown" style="padding-bottom: .3rem;">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                aria-expanded="false" style="color: white;"><b>Usuarios/Registrarse</b>
-            </a>
-            <div class="dropdown-menu">
-                <div class="container">
-                    <label for="I-mail">Usuario/e-mail</label>
-                    <input type="email" class="form-control" id="I-email">
-                    <label for="I-Contra">Contraseña</label>
-                    <input type="password" class="form-control" id="I-Contra">
-                    <button class="btn btn-success my-2 my-xl-6" type="submit">Ingresar</button>
-                    <button class="btn btn-info my-2 my-xl-6" type="submit">Registrarse</button>
-                </div>
-            </div>
-        </li>
-    </ul>
-
-    <form class="form-inline">
-        <input class="form-control mr-xl-2" type="text" placeholder="Buscar Película/Artista" aria-label="Search">
-        <button class="btn btn-success my-2 my-xl-0" type="submit">Buscar</button>
-    </form>
-</nav>
+    
+    <jsp:include page="NavBar_2.jsp"/>
 
 <div class="container" style="padding-top: 1rem; padding-bottom: 1rem;">
     <div class="jumbotron Jumps-B">
         <form>
-            <h3>Configuración</h3>
+            <h3>Configurar</h3>
 
             <div class="row" style="padding-top: 1rem;">
                 <div class="col-lx-12 col-md-8">
@@ -89,7 +66,7 @@
                             <label for="Comments" style="font-size: 20px;">Agregar Descripción</label>
                             <textarea class="form-control" id="Comments" rows="3"></textarea>
                             <a class="btn btn-info btn-md" style="margin-top: .5rem; opacity: 75%;" href="#"
-                                role="button">Publicar</a>
+                                role="button">Guardar</a>
                         </div>
                     </form>
                 </div>

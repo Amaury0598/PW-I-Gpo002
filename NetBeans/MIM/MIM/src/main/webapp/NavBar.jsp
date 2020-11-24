@@ -17,10 +17,7 @@
             <img src="Img/Logo-1-White.png" width="60" height="60" class="d-inline-block" alt="Logo" loading="lazy">
             <b style="color: white;">Music In Movies</b>
         </a>  
-    <form class="form-inline" style="padding-left: 20px">
-            <input class="form-control mr-xl-2" type="text" placeholder="Buscar Película/Artista" aria-label="Search">
-            <button class="btn btn-success my-2 my-xl-0" type="submit">Buscar</button>
-        </form>
+
         <ul class="navbar-nav ml-md-auto">
                      <%
             for(Category category : categories) {
@@ -31,7 +28,7 @@
          <%
              }
          %>
-            <li class="nav-item dropdown" style="padding-bottom: .3rem;">
+            <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false" style="color: white;"><b>Ingresar/Registrarse</b>
                 </a>  
@@ -52,22 +49,19 @@
                     </div>                     
                 </div>             
             </li>   
-               <li class="nav-item dropdown" style="padding-bottom: .3rem;">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false" style="color: white;"><b>Perfil</b>
-                </a>          
-                <div class="dropdown-menu">
-                    <form action="LogInCont" method="POST">
-                    <div class="container">
-                       <li class="nav-item">
-                            <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">Modificar </a>
-                        </li>   
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">Salir </a>
-                        </li>  
-                    </div>
-                    </form>                                      
-                </div>             
+               <li class="nav-item dropdown"s>                      
+                   <div class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false" style="color: white;"> Perfil
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-left dropdown-menu-lg-left">
+                          <a class="nav-link" href="Perfil_M.jsp" aria-haspopup="true" aria-expanded="false">Modificar </a>
+                          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">Salir </a>
+                        </div>
+                  </div>
             </li>   
-        </ul>
+            <form class="form-inline" style="padding-left: 20px">
+                <input class="form-control mr-xl-2" type="text" placeholder="Buscar Película/Artista" aria-label="Search">
+                <button class="btn btn-success my-2 my-xl-0" type="submit">Buscar</button>
+            </form>
+        </ul>      
     </nav>
