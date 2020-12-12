@@ -4,7 +4,10 @@
     Author     : amg05
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="com.mycompany.mim.Control.Model.Category"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
  <head>

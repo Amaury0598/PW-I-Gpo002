@@ -1,47 +1,96 @@
 package com.mycompany.mim.Control.Model;
+
 /**
  *
  * @author amg05
  */
 public class Usuarios {
-    
-private int id;
+
+    private int id;
     private String NEmail;
     private String NUser;
     private String NPassword;
+    private String NImague;
+    private String NDescr;
+    private int Puesto;
 
     public Usuarios() {
-    }
-
-    public Usuarios(int id, String NEmail) {
-        this.id = id;
-        this.NEmail = NEmail;
     }
 
     public Usuarios(String NEmail, String NPassword) {
         this.NEmail = NEmail;
         this.NPassword = NPassword;
     }
-    
+
     public Usuarios(String NEmail, String NUser, String NPassword) {
         this.NEmail = NEmail;
         this.NUser = NUser;
         this.NPassword = NPassword;
     }
 
-    public Usuarios(int id, String NEmail, String NUser, String NPassword) {
+    public Usuarios(int id, String NEmail, String NUser, String NDescr) {
+        this.id = id;
+        this.NEmail = NEmail;
+        this.NUser = NUser;
+        this.NDescr = NDescr;
+    }
+
+    public Usuarios(int id, String NUser, String NPassword, String NImague, String NDescr) {
+        this.id = id;
+        this.NUser = NUser;
+        this.NPassword = NPassword;
+        this.NImague = NImague;
+        this.NDescr = NDescr;
+    }
+
+
+    public Usuarios(int id, String NEmail, String NUser, String NPassword, String NDescr, int Puesto) {
         this.id = id;
         this.NEmail = NEmail;
         this.NUser = NUser;
         this.NPassword = NPassword;
+        this.NDescr = NDescr;
+        this.Puesto = Puesto;
     }
-      
+
+    public Usuarios(int id, String NEmail, String NUser, String NPassword, String NImague, String NDescr, int Puesto) {
+        this.id = id;
+        this.NEmail = NEmail;
+        this.NUser = NUser;
+        this.NPassword = NPassword;
+        this.NImague = NImague;
+        this.NDescr = NDescr;
+        this.Puesto = Puesto;
+    }
+    
+    public Usuarios(int id, String NUser, String NPassword) {
+        this.id = id;
+        this.NUser = NUser;
+        this.NPassword = NPassword;
+    }
+
+    public int getPuesto() {
+        return Puesto;
+    }
+
+    public void setPuesto(int Puesto) {
+        this.Puesto = Puesto;
+    }
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setNImague(String NImague) {
+        this.NImague = NImague;
+    }
+
+    public String getNImague() {
+        return NImague;
     }
 
     public String getNEmail() {
@@ -62,6 +111,14 @@ private int id;
 
     public String getNPassword() {
         return NPassword;
+    }
+
+    public void setNDescr(String NDescr) {
+        this.NDescr = NDescr;
+    }
+
+    public String getNDescr() {
+        return NDescr;
     }
 
     public void setNPassword(String NPassword) {

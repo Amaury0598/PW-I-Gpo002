@@ -10,7 +10,7 @@ package com.mycompany.mim.Control.Model;
  * @author amg05
  */
 public class Category {
-    
+
     private int Id_Cat;
     private String Name_Cat;
     private int Order_Cat;
@@ -51,5 +51,5 @@ public class Category {
 
     public void setOrder_Cat(int Order_Cat) {
         this.Order_Cat = Order_Cat;
-    }               
+    }
 }

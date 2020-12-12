@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package com.mycompany.mim.Control.Control;
-
-import com.mycompany.mim.Control.Dao.UserDao;
-import com.mycompany.mim.Control.Model.Usuarios;
+import com.mycompany.mim.Control.Dao.Noticion;
+import com.mycompany.mim.Control.Model.Noticias;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -20,10 +19,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author amg05
  */
-@WebServlet(name = "RegistroCont", urlPatterns = {"/RegistroCont"})
-public class RegistroCont extends HttpServlet {
+@WebServlet(name = "SubirNoticia", urlPatterns = {"/SubirNoticia"})
+public class SubirNoticia extends HttpServlet {
 
-    /**
+   /**
      * Handles the HTTP <code>POST</code> method.
      *
      * @param request servlet request
@@ -34,22 +33,24 @@ public class RegistroCont extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String NEmail = request.getParameter("NEmail");
-        String NUser = request.getParameter("NUser");
-        String NPassword = request.getParameter("NPassword");
-        Usuarios Nuevusuario = new Usuarios(NEmail, NUser, NPassword);
-        if (UserDao.Registro(Nuevusuario) == 1) {
-//            HttpSession session = request.getSession();
-//            session.setAttribute("id", Nuevusuario.getId());
-//            session.setAttribute("NEmail", Nuevusuario.getNEmail());
-//            session.setAttribute("NUser", Nuevusuario.getNUser());
-//            session.setAttribute("Puesto", Nuevusuario.getPuesto());
+        HttpSession session = request.getSession();
+        int UsuN_id = (int)session.getAttribute("id");
+        String N_Title = request.getParameter("TituloNoti");
+        String N_Descr = request.getParameter("DescriNoti");
+        String N_Content = request.getParameter("ContentNoti");
+        String N_Img1 = request.getParameter("ImagenN1");
+        String N_Img2 = request.getParameter("ImagenN2");
+        String N_Img3 = request.getParameter("ImagenN3");
+        String Cate = request.getParameter("categorianoti");
+        String N_Vid = request.getParameter("Video");
+        Noticias NuevaNoti = new Noticias(0, UsuN_id, N_Title, N_Descr, N_Content, N_Img1, N_Img2, N_Img3, Cate, N_Vid);
+        if(Noticion.SubirNoti(NuevaNoti) == 1){
             response.sendRedirect("MainPageCont");
-        } else {
+        }else{
             response.sendRedirect("FalloRegistro.jsp");
         }
         //response.sendRedirect("index.jsp");
-    }
+    }   
 
     /**
      * Returns a short description of the servlet.

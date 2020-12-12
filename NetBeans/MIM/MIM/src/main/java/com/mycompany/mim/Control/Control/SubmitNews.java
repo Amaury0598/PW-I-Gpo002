@@ -5,10 +5,13 @@
  */
 package com.mycompany.mim.Control.Control;
 
+import com.mycompany.mim.Control.Dao.CategoryDao;
 import com.mycompany.mim.Control.Dao.UserDao;
+import com.mycompany.mim.Control.Model.Category;
 import com.mycompany.mim.Control.Model.Usuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,11 +23,12 @@ import javax.servlet.http.HttpSession;
  *
  * @author amg05
  */
-@WebServlet(name = "RegistroCont", urlPatterns = {"/RegistroCont"})
-public class RegistroCont extends HttpServlet {
+@WebServlet(name = "SubmitNews", urlPatterns = {"/SubmitNews"})
+public class SubmitNews extends HttpServlet {
 
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP <code>POST</code> method.
+     * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
      * @param response servlet response
@@ -32,24 +36,12 @@ public class RegistroCont extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String NEmail = request.getParameter("NEmail");
-        String NUser = request.getParameter("NUser");
-        String NPassword = request.getParameter("NPassword");
-        Usuarios Nuevusuario = new Usuarios(NEmail, NUser, NPassword);
-        if (UserDao.Registro(Nuevusuario) == 1) {
-//            HttpSession session = request.getSession();
-//            session.setAttribute("id", Nuevusuario.getId());
-//            session.setAttribute("NEmail", Nuevusuario.getNEmail());
-//            session.setAttribute("NUser", Nuevusuario.getNUser());
-//            session.setAttribute("Puesto", Nuevusuario.getPuesto());
-            response.sendRedirect("MainPageCont");
-        } else {
-            response.sendRedirect("FalloRegistro.jsp");
-        }
-        //response.sendRedirect("index.jsp");
-    }
+        List<Category> categories = CategoryDao.getCategories();
+        request.setAttribute("Categories", categories);
+        request.getRequestDispatcher("SubmitNew.jsp").forward(request , response);        
+    } 
 
     /**
      * Returns a short description of the servlet.
@@ -59,5 +51,6 @@ public class RegistroCont extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
+
 }

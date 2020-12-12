@@ -6,10 +6,12 @@
 package com.mycompany.mim.Control.Control;
 
 import com.mycompany.mim.Control.Dao.CategoryDao;
+import com.mycompany.mim.Control.Dao.ComentariosDao;
 import com.mycompany.mim.Control.Dao.FavoriteDao;
 import com.mycompany.mim.Control.Dao.Noticion;
 import com.mycompany.mim.Control.Dao.UserDao;
 import com.mycompany.mim.Control.Model.Category;
+import com.mycompany.mim.Control.Model.Comentarios;
 import com.mycompany.mim.Control.Model.Favorites;
 import com.mycompany.mim.Control.Model.Noticias;
 import com.mycompany.mim.Control.Model.Usuarios;
@@ -27,8 +29,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author amg05
  */
-@WebServlet(name = "MainPageCont", urlPatterns = {"/MainPageCont"})
-public class MainPageCont extends HttpServlet {
+@WebServlet(name = "InterNoti", urlPatterns = {"/InterNoti"})
+public class InterNoti extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -43,15 +45,27 @@ public class MainPageCont extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        if(session.getAttribute("id") == null){
-        session.setAttribute("id", 4);}
+        String Vernotis = request.getParameter("VerNoti_ID");
+        if (Vernotis != null) {
+            int ID_Vernoti = Integer.parseInt(Vernotis);
+            Noticias VerNotticia = new Noticias(ID_Vernoti);
+            Noticias Ponerrnoti = (Noticias) Noticion.VerNoti(VerNotticia);
+            if (Ponerrnoti != null) {
+
+                session.setAttribute("Noti_id", Ponerrnoti.getNoti_id());
+            }
+        }
         List<Favorites> favoritas = FavoriteDao.getFavs();
         request.setAttribute("Favorites", favoritas);
+        List<Usuarios> usuarios = UserDao.getUsuariosL();
+        request.setAttribute("UsuariosL", usuarios);
+        List<Comentarios> comentarios = ComentariosDao.getNotis();
+        request.setAttribute("Comentarios", comentarios);
         List<Noticias> noticias = Noticion.getNotis();
         request.setAttribute("Noticiones", noticias);
         List<Category> categories = CategoryDao.getCategories();
         request.setAttribute("Categories", categories);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("VerNoticia.jsp").forward(request, response);
     }
 
     /**

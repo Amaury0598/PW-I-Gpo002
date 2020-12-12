@@ -5,8 +5,8 @@
  */
 package com.mycompany.mim.Control.Control;
 
-import com.mycompany.mim.Control.Dao.UserDao;
-import com.mycompany.mim.Control.Model.Usuarios;
+import com.mycompany.mim.Control.Dao.Noticion;
+import com.mycompany.mim.Control.Model.Noticias;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -20,11 +20,21 @@ import javax.servlet.http.HttpSession;
  *
  * @author amg05
  */
-@WebServlet(name = "RegistroCont", urlPatterns = {"/RegistroCont"})
-public class RegistroCont extends HttpServlet {
+@WebServlet(name = "PuntuarCont", urlPatterns = {"/PuntuarCont"})
+public class PuntuarCont extends HttpServlet {
 
     /**
-     * Handles the HTTP <code>POST</code> method.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
      * @param response servlet response
@@ -33,22 +43,17 @@ public class RegistroCont extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String NEmail = request.getParameter("NEmail");
-        String NUser = request.getParameter("NUser");
-        String NPassword = request.getParameter("NPassword");
-        Usuarios Nuevusuario = new Usuarios(NEmail, NUser, NPassword);
-        if (UserDao.Registro(Nuevusuario) == 1) {
-//            HttpSession session = request.getSession();
-//            session.setAttribute("id", Nuevusuario.getId());
-//            session.setAttribute("NEmail", Nuevusuario.getNEmail());
-//            session.setAttribute("NUser", Nuevusuario.getNUser());
-//            session.setAttribute("Puesto", Nuevusuario.getPuesto());
-            response.sendRedirect("MainPageCont");
+            throws ServletException, IOException {     
+        String ID_Noti = request.getParameter("VerNotiPunt_ID");
+        int ID_Noti_I = Integer.parseInt(ID_Noti);
+        String Calif = request.getParameter("Califi");
+        int Calif_I = Integer.parseInt(Calif);
+        Noticias NotiPunt = new Noticias(ID_Noti_I, Calif_I);
+        if (Noticion.Puntuacion(NotiPunt) == 1) {
+            response.sendRedirect("InterNoti");
         } else {
             response.sendRedirect("FalloRegistro.jsp");
         }
-        //response.sendRedirect("index.jsp");
     }
 
     /**
@@ -59,5 +64,5 @@ public class RegistroCont extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 }

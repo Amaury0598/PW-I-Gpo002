@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "LogOffCont", urlPatterns = {"/LogOffCont"})
 public class LogOffCont extends HttpServlet {
-    
-     /**
+
+    /**
      * Handles the HTTP <code>POST</code> method.
      *
      * @param request servlet request
@@ -27,7 +27,7 @@ public class LogOffCont extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getSession().invalidate();
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("MainPageCont");
     }
 
     /**

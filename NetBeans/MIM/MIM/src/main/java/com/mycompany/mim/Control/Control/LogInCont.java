@@ -40,7 +40,10 @@ public class LogInCont extends HttpServlet {
             session.setAttribute("id", IngresaUsuario.getId());
             session.setAttribute("NEmail", IngresaUsuario.getNEmail());
             session.setAttribute("NUser", IngresaUsuario.getNUser());
-            response.sendRedirect("Ingresaste.jsp");
+            session.setAttribute("NImague", IngresaUsuario.getNImague());
+            session.setAttribute("NDescr", IngresaUsuario.getNDescr());
+            session.setAttribute("Puesto", IngresaUsuario.getPuesto());
+            response.sendRedirect("MainPageCont");
         }
     }
     /**

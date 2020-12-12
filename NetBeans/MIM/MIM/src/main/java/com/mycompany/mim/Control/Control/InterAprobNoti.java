@@ -6,13 +6,9 @@
 package com.mycompany.mim.Control.Control;
 
 import com.mycompany.mim.Control.Dao.CategoryDao;
-import com.mycompany.mim.Control.Dao.FavoriteDao;
 import com.mycompany.mim.Control.Dao.Noticion;
-import com.mycompany.mim.Control.Dao.UserDao;
 import com.mycompany.mim.Control.Model.Category;
-import com.mycompany.mim.Control.Model.Favorites;
 import com.mycompany.mim.Control.Model.Noticias;
-import com.mycompany.mim.Control.Model.Usuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -27,9 +23,9 @@ import javax.servlet.http.HttpSession;
  *
  * @author amg05
  */
-@WebServlet(name = "MainPageCont", urlPatterns = {"/MainPageCont"})
-public class MainPageCont extends HttpServlet {
-
+@WebServlet(name = "InterAprobNoti", urlPatterns = {"/InterAprobNoti"})
+public class InterAprobNoti extends HttpServlet {
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -42,16 +38,21 @@ public class MainPageCont extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        if(session.getAttribute("id") == null){
-        session.setAttribute("id", 4);}
-        List<Favorites> favoritas = FavoriteDao.getFavs();
-        request.setAttribute("Favorites", favoritas);
+        
+        String Vernotis = request.getParameter("VerNoti_ID_Status");
+        int ID_Vernoti =Integer.parseInt(Vernotis);  
+        Noticias VerNotticia = new Noticias(ID_Vernoti);
+        Noticias Ponerrnoti = (Noticias) Noticion.VerNoti(VerNotticia);
+        if(Ponerrnoti != null){
+            HttpSession session = request.getSession();
+            session.setAttribute("Noti_id", Ponerrnoti.getNoti_id());
+        }
         List<Noticias> noticias = Noticion.getNotis();
         request.setAttribute("Noticiones", noticias);
         List<Category> categories = CategoryDao.getCategories();
         request.setAttribute("Categories", categories);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+     
+        request.getRequestDispatcher("AprobacionStatus.jsp").forward(request, response);
     }
 
     /**

@@ -21,20 +21,20 @@ import java.util.logging.Logger;
  * @author amg05
  */
 public class CategoryDao {
-    
-    public static int InsertCategory(Category category){
+
+    public static int InsertCategory(Category category) {
         Connection con = null;
-        try{
+        try {
             con = DBConnect.getConnection();
-            String sql = "call Add_Category(?,?);"; 
+            String sql = "call Add_Category(?,?);";
             CallableStatement statement = con.prepareCall(sql);
             statement.setString(1, category.getName_Cat());
             statement.setInt(2, category.getOrder_Cat());
             return statement.executeUpdate();
-        }catch(SQLException ex){   
-             System.out.println(ex.getMessage());
-        }finally {
-            if(con != null){
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
                 try {
                     con.close();
                 } catch (SQLException ex) {
@@ -44,28 +44,26 @@ public class CategoryDao {
         }
         return 0;
     }
-    
-    public static List<Category> getCategories(){
+
+    public static List<Category> getCategories() {
         List<Category> categories = new ArrayList<>();
         Connection con = null;
-        try{
-            con = DBConnect.getConnection(); 
+        try {
+            con = DBConnect.getConnection();
             String sql = "call Get_Category();";
             CallableStatement statement = con.prepareCall(sql);
             ResultSet result = statement.executeQuery();
-            while(result.next()){
+            while (result.next()) {
                 int Id_cat = result.getInt(1);
                 String Name_Cat = result.getString(2);
                 int Order_Cat = result.getInt(3);
-                categories.add(new Category(Id_cat,Name_Cat, Order_Cat));
+                categories.add(new Category(Id_cat, Name_Cat, Order_Cat));
             }
             return categories;
-        }
-        catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
-        finally{
-            if(con!=null){
+        } finally {
+            if (con != null) {
                 try {
                     con.close();
                 } catch (SQLException ex) {
